@@ -116,6 +116,38 @@
       scrollbar-width: none;
       /* Firefox */
     }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeInUp {
+      animation: fadeInUp 0.5s ease-out forwards;
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .animate-slideInRight {
+      animation: slideInRight 0.5s ease-out forwards;
+    }
   </style>
 
   <script type="importmap">
@@ -130,7 +162,7 @@
         }
       }
     </script>
-  <script type="module" crossorigin src="/assets/index-C6ro_JHG.js"></script>
+  <script type="module" crossorigin src="/assets/index-VX_i8-IW.js"></script>
 </head>
 
 <body>
