@@ -21,15 +21,15 @@ function App() {
 
   useEffect(() => {
     if (view === 'privacy') {
-      document.title = 'Privacy Policy — Adyber Agency'
+      document.title = 'Privacy Policy | Adyber Agency'
       const metaDesc = document.querySelector('meta[name="description"]')
       if (metaDesc) metaDesc.setAttribute('content', 'Privacy Policy for Adyber, top digital marketing & web agency.')
     } else if (view === 'terms') {
-      document.title = 'Terms of Service — Adyber Agency'
+      document.title = 'Terms of Service | Adyber Agency'
       const metaDesc = document.querySelector('meta[name="description"]')
       if (metaDesc) metaDesc.setAttribute('content', 'Terms of Service for Adyber, top digital marketing & web agency.')
     } else {
-      document.title = 'Adyber — Digital Marketing & Web Agency in Dehradun'
+      document.title = 'Adyber | Digital Marketing & Web Agency in Dehradun'
       const metaDesc = document.querySelector('meta[name="description"]')
       if (metaDesc) metaDesc.setAttribute('content', 'Adyber is a top digital marketing & web agency in Dehradun & Haridwar. We build AI automations, high-converting websites, and scale businesses fast.')
     }
