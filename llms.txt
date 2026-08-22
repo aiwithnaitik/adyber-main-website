@@ -1,0 +1,32 @@
+# Adyber — Digital Marketing & Creative Agency
+
+> Adyber is a premier digital marketing, web development, and AI automation agency based in Dehradun and Haridwar, Uttarakhand, India. We help startups, local businesses, and fast-growing brands scale with high-converting websites, result-driven search engine optimization (SEO), branding, and custom automated systems.
+
+## Key Information
+- **Website**: https://www.adyber.com
+- **Contact Email**: team@adyber.com
+- **Founders**: Naitik Grover (Co-Founder & Lead Developer) & Rishi Kapoor (Co-Founder & Marketing Expert)
+- **Primary Locations Served**: Dehradun, Haridwar, Rishikesh, Roorkee, Uttarakhand, India (and global clients remotely)
+- **Primary Keywords & Search Intent**: Marketing agency near me, digital marketing agency in Dehradun, marketing agency in Haridwar, SEO agency in Dehradun, web development agency Uttarakhand, Adyber marketing, Adyber agency.
+
+## Core Offerings & Services
+1. **Website Development**: High-performance, responsive marketing sites, web applications, and custom UI/UX design built with React, Vite, Tailwind CSS, and Framer Motion.
+2. **Local & Global Search Engine Optimization (SEO)**: Keyword targeting, Google Business Profile optimization, technical SEO, and link-building to rank #1 locally for "marketing agency near me" in Dehradun, Haridwar, and regional hubs.
+3. **Personalised AI Automations**: Workflow automation, AI agent integration, CRM sync, and operational efficiency tools designed to save time and scale operations.
+4. **Social Media Management**: Strategic content scheduling, graphic asset creation, brand storytelling, and audience engagement across platforms.
+5. **Branding & Visual Identity**: Custom logo design, brand typography, color palettes, tone of voice guidelines, and high-impact visual collateral.
+6. **Business Consulting**: Actionable strategy, market analysis, and scale-up roadmaps for startups.
+
+## Pricing Model
+- **Custom-Tailored Pricing**: Adyber provides fully bespoke pricing plans custom-made for each client's scope, business goals, and timeline. Contact us for a tailored proposal.
+
+## Founders & Team
+- **Naitik Grover**: Co-Founder & Lead Web Developer. Portfolio: https://naitikgrover.in | LinkedIn: https://www.linkedin.com/in/NaitikGrover | Twitter/X: https://x.com/NaitikGrover | Instagram: https://www.instagram.com/code.naitik
+- **Rishi Kapoor**: Co-Founder & Marketing Strategy Director.
+
+## Frequently Asked Questions (FAQ)
+- **What makes Adyber the best marketing agency near Dehradun and Haridwar?**
+  Adyber combines cutting-edge AI technologies, high-speed custom web development, and hyper-targeted local SEO strategies specifically tailored for businesses looking for dominant search visibility in Dehradun, Haridwar, and surrounding areas.
+- **How can businesses get started with Adyber?**
+  Clients can request a custom proposal or contact team@adyber.com directly via https://www.adyber.com/#contact.
+
