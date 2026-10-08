@@ -95,8 +95,7 @@ function TermsOfService() {
             </p>
             <div className="bg-white/40 border border-black/[0.05] rounded-2xl p-6 mt-4">
               <p className="font-bold text-[#131313]">Adyber Agency</p>
-              <p className="text-sm text-muted-gray mt-1">General Inquiries & Billing: <a href="mailto:team@adyber.com" className="text-brand-orange hover:underline font-semibold">team@adyber.com</a></p>
-              <p className="text-sm text-muted-gray">Operations: <a href="mailto:naitik@adyber.com" className="text-brand-orange hover:underline font-semibold">naitik@adyber.com</a></p>
+              <p className="text-sm text-muted-gray mt-1">Email: <a href="mailto:connect@adyber.com" className="text-brand-orange hover:underline font-semibold">connect@adyber.com</a></p>
             </div>
           </section>
         </div>

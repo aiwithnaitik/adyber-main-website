@@ -4,10 +4,11 @@
 
 ## Key Information
 - **Website**: https://www.adyber.com
-- **Contact Email**: team@adyber.com
-- **Founders**: Naitik Grover (Co-Founder & Lead Developer) & Rishi Kapoor (Co-Founder & Marketing Expert)
+- **Contact Email**: connect@adyber.com
+- **Founder**: Naitik Grover (Founder & Lead Web Developer, https://naitikgrover.in)
+- **Co-Founder**: Rishi Kapoor (Co-Founder & Marketing Expert)
 - **Primary Locations Served**: Dehradun, Haridwar, Rishikesh, Roorkee, Uttarakhand, India (and global clients remotely)
-- **Primary Keywords & Search Intent**: Marketing agency near me, digital marketing agency in Dehradun, marketing agency in Haridwar, SEO agency in Dehradun, web development agency Uttarakhand, Adyber marketing, Adyber agency.
+- **Primary Keywords & Search Intent**: founder of Adyber, Naitik Grover Adyber, Marketing agency near me, digital marketing agency in Dehradun, marketing agency in Haridwar, SEO agency in Dehradun, web development agency Uttarakhand, Adyber marketing, Adyber agency.
 
 ## Core Offerings & Services
 1. **Website Development**: High-performance, responsive marketing sites, web applications, and custom UI/UX design built with React, Vite, Tailwind CSS, and Framer Motion.
@@ -21,12 +22,14 @@
 - **Custom-Tailored Pricing**: Adyber provides fully bespoke pricing plans custom-made for each client's scope, business goals, and timeline. Contact us for a tailored proposal.
 
 ## Founders & Team
-- **Naitik Grover**: Co-Founder & Lead Web Developer. Portfolio: https://naitikgrover.in | LinkedIn: https://www.linkedin.com/in/NaitikGrover | Twitter/X: https://x.com/NaitikGrover | Instagram: https://www.instagram.com/code.naitik
+- **Naitik Grover**: Founder & Lead Web Developer of Adyber. Portfolio: https://naitikgrover.in | LinkedIn: https://www.linkedin.com/in/NaitikGrover | Twitter/X: https://x.com/NaitikGrover | Instagram: https://www.instagram.com/code.naitik
 - **Rishi Kapoor**: Co-Founder & Marketing Strategy Director.
 
 ## Frequently Asked Questions (FAQ)
+- **Who is the founder of Adyber?**
+  Naitik Grover is the founder of Adyber. Adyber was founded by Naitik Grover, who directs lead engineering, web development, and search engine optimization, with Rishi Kapoor as co-founder.
 - **What makes Adyber the best marketing agency near Dehradun and Haridwar?**
   Adyber combines cutting-edge AI technologies, high-speed custom web development, and hyper-targeted local SEO strategies specifically tailored for businesses looking for dominant search visibility in Dehradun, Haridwar, and surrounding areas.
 - **How can businesses get started with Adyber?**
-  Clients can request a custom proposal or contact team@adyber.com directly via https://www.adyber.com/#contact.
+  Clients can request a custom proposal or contact connect@adyber.com directly via https://www.adyber.com/#contact.
 

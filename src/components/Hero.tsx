@@ -81,17 +81,17 @@ function Hero() {
         
         {/* Social Proof Row */}
         <motion.div 
-          className="flex items-center justify-center w-[226px] h-8 gap-2 mt-4 md:mt-6"
+          className="flex items-center justify-center w-auto h-8 gap-2.5 mt-4 md:mt-6 whitespace-nowrap flex-nowrap"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 1.4, ease: [0.25, 1, 0.5, 1] }}
         >
-          <div className="flex w-[84px] relative">
-            <img src="https://framerusercontent.com/images/LdiJIgo7vhBde0WiWHd48uSzxU.png" alt="Adyber Co-Founder Naitik Grover - Lead Developer Dehradun" className="w-8 h-8 rounded-full border border-white shadow-[0px_1px_2px_rgba(0,0,0,0.08),_0px_2px_6px_rgba(0,0,0,0.04)] object-cover z-[3]" />
-            <img src="https://framerusercontent.com/images/I9yoNS4RgoWEeRpJDtgEIoLAd4Y.png" alt="Adyber Co-Founder Rishi Kapoor - Marketing Expert Haridwar" className="w-8 h-8 rounded-full border border-white shadow-[0px_1px_2px_rgba(0,0,0,0.08),_0px_2px_6px_rgba(0,0,0,0.04)] object-cover z-[2] -ml-2" />
-            <img src="https://framerusercontent.com/images/G5E86VA7DStEga3pPtCu3nwW1qE.png" alt="Adyber Client - Digital Marketing & Growth" className="w-8 h-8 rounded-full border border-white shadow-[0px_1px_2px_rgba(0,0,0,0.08),_0px_2px_6px_rgba(0,0,0,0.04)] object-cover z-[1] -ml-2" />
+          <div className="flex items-center relative flex-shrink-0">
+            <img src="https://framerusercontent.com/images/LdiJIgo7vhBde0WiWHd48uSzxU.png" alt="Adyber Co-Founder Naitik Grover - Lead Developer Dehradun" className="w-8 h-8 rounded-full border-2 border-white shadow-[0px_1px_2px_rgba(0,0,0,0.08),_0px_2px_6px_rgba(0,0,0,0.04)] object-cover z-[3]" />
+            <img src="https://framerusercontent.com/images/I9yoNS4RgoWEeRpJDtgEIoLAd4Y.png" alt="Adyber Co-Founder Rishi Kapoor - Marketing Expert Haridwar" className="w-8 h-8 rounded-full border-2 border-white shadow-[0px_1px_2px_rgba(0,0,0,0.08),_0px_2px_6px_rgba(0,0,0,0.04)] object-cover z-[2] -ml-2.5" />
+            <img src="https://framerusercontent.com/images/G5E86VA7DStEga3pPtCu3nwW1qE.png" alt="Adyber Client - Digital Marketing & Growth" className="w-8 h-8 rounded-full border-2 border-white shadow-[0px_1px_2px_rgba(0,0,0,0.08),_0px_2px_6px_rgba(0,0,0,0.04)] object-cover z-[1] -ml-2.5" />
           </div>
-          <span className="font-body text-xs sm:text-sm leading-5 font-normal tracking-[-0.14px] text-muted-gray">
+          <span className="font-body text-xs sm:text-sm leading-none font-normal tracking-[-0.14px] text-muted-gray whitespace-nowrap">
             Trusted by founders.
           </span>
         </motion.div>

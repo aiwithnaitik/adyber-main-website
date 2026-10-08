@@ -1,11 +1,6 @@
 import { motion } from 'framer-motion'
 
 
-const EnterpriseIcon = ({ dark = false, orange = false }: { dark?: boolean; orange?: boolean }) => (
-  <svg viewBox="0 0 24 24" className={`w-5 h-5 fill-current ${orange ? 'text-[#FF4D00]' : dark ? 'text-white' : 'text-near-black'}`} xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-  </svg>
-)
 
 const CheckIcon = ({ dark = false, orange = false }: { dark?: boolean; orange?: boolean }) => (
   <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 ${
@@ -126,10 +121,6 @@ function Pricing() {
               <div className="w-[48%] flex flex-col justify-between h-full">
                 
                 <div className="flex flex-col items-start gap-4">
-                  {/* Orange Icon Tile */}
-                  <div className="w-12 h-12 bg-[#FF4D00] rounded-[12px] flex items-center justify-center shadow-sm">
-                    <EnterpriseIcon dark />
-                  </div>
                   {/* Plan Title & Description */}
                   <h3 className="font-display text-2xl font-bold text-near-black leading-none">
                     Tailored Partner Plan
@@ -180,7 +171,9 @@ function Pricing() {
 
                 {/* Action button (Orange background hovering to darker orange) */}
                 <a 
-                  href="#contact" 
+                  href="https://wa.me/917819916385" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full h-11 bg-[#FF4D00] hover:bg-[#E04400] text-white rounded-full flex items-center justify-center font-body text-sm font-semibold tracking-tight transition-colors duration-200 group"
                 >
                   Book a Discovery Call
@@ -193,19 +186,15 @@ function Pricing() {
 
             {/* Mobile Stacked Layout (hidden on desktop) */}
             <div className="flex md:hidden flex-col gap-5 w-full text-left z-10">
-              {/* 1. Icon */}
-              <div className="w-10 h-10 bg-[#FF4D00] rounded-[10px] flex items-center justify-center shadow-sm">
-                <EnterpriseIcon dark />
-              </div>
-              {/* 2. Plan Title */}
+              {/* Plan Title */}
               <h3 className="font-display text-xl font-bold text-near-black leading-none">
                 Tailored Partner Plan
               </h3>
-              {/* 3. Description */}
+              {/* Description */}
               <p className="font-body text-xs sm:text-sm leading-relaxed text-muted-gray">
                 Collaborate directly with our engineering team to build custom AI workflows, SaaS platforms, and digital systems aligned with your targets.
               </p>
-              {/* 4. Price */}
+              {/* Price */}
               <div className="flex flex-col gap-2">
                 <div className="flex flex-col leading-none gap-0.5">
                   <span className="font-display text-base text-muted-gray font-bold tracking-tight">
@@ -217,7 +206,7 @@ function Pricing() {
                 </div>
                 <div className="w-full h-[1px] bg-black/[0.08]" />
               </div>
-              {/* 5. Features List */}
+              {/* Features List */}
               <div className="flex flex-col gap-3">
                 {customFeatures.map((feat, idx) => (
                   <div key={idx} className="flex items-center gap-2.5">
@@ -228,7 +217,7 @@ function Pricing() {
                   </div>
                 ))}
               </div>
-              {/* 6. Delivery Row */}
+              {/* Delivery Row */}
               <div>
                 <div className="w-full h-[1px] bg-black/[0.08] mb-3" />
                 <div className="flex justify-between font-body text-xs sm:text-sm text-muted-gray leading-none">
@@ -236,9 +225,11 @@ function Pricing() {
                   <span className="font-semibold text-near-black">Direct Partnership</span>
                 </div>
               </div>
-              {/* 7. Button */}
+              {/* Button */}
               <a 
-                href="#contact" 
+                href="https://wa.me/917819916385" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full h-11 bg-[#FF4D00] hover:bg-[#E04400] text-white rounded-full flex items-center justify-center font-body text-sm font-semibold tracking-tight transition-colors duration-200 group"
               >
                 Book a Discovery Call

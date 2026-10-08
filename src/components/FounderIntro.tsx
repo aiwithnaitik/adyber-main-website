@@ -32,7 +32,7 @@ const naitikTimeline = [
 const rishiTimeline = [
   { role: "UI/UX Designer", years: "2022" },
   { role: "Marketing Expert & Designer at Adyber", years: "2024" },
-  { role: "Founder of Adyber", years: "2026" }
+  { role: "Co-Founder of Adyber", years: "2026" }
 ]
 
 function FounderIntro() {
@@ -133,7 +133,7 @@ function FounderIntro() {
 
           {/* Right Content Column */}
           <motion.div 
-            className="w-full max-w-[456px] flex flex-col justify-end text-left space-y-8 sm:space-y-12 md:space-y-16"
+            className="w-full max-w-[456px] flex flex-col justify-end text-left space-y-4 sm:space-y-5 md:space-y-6"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -144,7 +144,7 @@ function FounderIntro() {
             }}
           >
             {/* Biography details */}
-            <div className="flex flex-col gap-4 sm:gap-6">
+            <div className="flex flex-col gap-2.5 sm:gap-3">
               
               {/* Heading */}
               <motion.h2 
@@ -171,7 +171,7 @@ function FounderIntro() {
 
               {/* Bio Paragraph */}
               <p className="font-body text-base md:text-lg leading-6 md:leading-7 text-muted-gray font-normal">
-                Naitik Grover is a website developer and SEO expert focused on crafting fast, functional digital experiences. He works with brands and startups to build high-performance websites and execute SEO strategies that maximize organic search visibility. He balances clean, modern code with optimization to turn web traffic into growth.
+                Naitik Grover is the founder of Adyber, website developer, and SEO expert focused on crafting fast, functional digital experiences. He works with brands and startups to build high-performance websites and execute SEO strategies that maximize organic search visibility. He balances clean, modern code with optimization to turn web traffic into growth.
               </p>
 
             </div>
@@ -180,7 +180,7 @@ function FounderIntro() {
             <div className="w-full h-[1px] bg-black/12" />
 
             {/* Career Timeline */}
-            <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 w-full">
+            <div className="flex flex-col gap-2.5 sm:gap-3.5 w-full">
               {naitikTimeline.map((item, idx) => (
                 <div key={idx} className="flex justify-between items-center w-full font-body text-xs sm:text-sm leading-none">
                   <span className="font-bold text-[#131313]">{item.role}</span>
@@ -198,15 +198,35 @@ function FounderIntro() {
       {/* ========================================================
           PROFILE 2: Rishi (Bio Left, Image Right)
           ======================================================== */}
-      <div className="w-full max-w-[1920px] px-4 sm:px-6 md:px-10 lg:px-[156px] relative flex flex-col items-center">
+      <div className="w-full max-w-[1920px] px-6 md:px-10 lg:px-[156px] relative flex flex-col items-center">
 
+        {/* Massive ghost heading background */}
+        <div className="w-full max-w-[1128px] pointer-events-none select-none z-0 absolute top-0 left-0 right-0 mx-auto lg:-translate-x-6 hidden lg:block">
+          <motion.div 
+            className="w-full overflow-hidden h-[153px]"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              type: 'spring',
+              stiffness: 320,
+              damping: 60,
+              mass: 1,
+              delay: 0.2
+            }}
+          >
+            <h2 className="font-display text-[204px] font-bold leading-none tracking-tighter text-left bg-gradient-to-b from-[#131313]/35 to-transparent bg-clip-text text-transparent opacity-95 pl-2">
+              Founder
+            </h2>
+          </motion.div>
+        </div>
 
         {/* Two-column layout container (alternated columns: Text Left, Image Right) */}
         <div className="w-full max-w-[1128px] flex flex-col-reverse lg:flex-row gap-10 md:gap-16 lg:gap-[216px] justify-between items-center lg:items-end z-10 lg:mt-6">
 
           {/* Left Content Column */}
           <motion.div 
-            className="w-full max-w-[456px] flex flex-col justify-end text-left space-y-8 sm:space-y-12 md:space-y-16"
+            className="w-full max-w-[456px] flex flex-col justify-end text-left space-y-4 sm:space-y-5 md:space-y-6"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -217,34 +237,46 @@ function FounderIntro() {
             }}
           >
             {/* Biography details */}
-            <div className="flex flex-col gap-4 sm:gap-6">
+            <div className="flex flex-col gap-2.5 sm:gap-3">
               
               {/* Heading */}
               <motion.h2 
-                className="font-display text-[28px] sm:text-[34px] md:text-[40px] font-bold text-near-black leading-[34px] sm:leading-[42px] md:leading-[48px]"
+                className="font-display text-[28px] sm:text-[34px] md:text-[40px] font-bold text-near-black leading-[34px] sm:leading-[42px] md:leading-[48px] -ml-[38px] sm:-ml-[48px] md:-ml-[56px]"
                 variants={textContainerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                {"The Founder".split(" ").map((word, wordIdx) => (
-                  <span key={wordIdx} className="inline-block mr-2 sm:mr-3">
-                    {word.split("").map((char, charIdx) => (
-                      <motion.span 
-                        key={charIdx} 
-                        variants={textRevealVariants}
-                        className="inline-block"
-                      >
-                        {char}
-                      </motion.span>
-                    ))}
-                  </span>
-                ))}
+                {/* 'Co-' in white */}
+                <span className="text-white inline-block">
+                  {"Co-".split("").map((char, charIdx) => (
+                    <motion.span 
+                      key={`co-${charIdx}`} 
+                      variants={textRevealVariants}
+                      className="inline-block text-white"
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                </span>
+                
+                {/* 'Founder' in dark */}
+                <span className="text-near-black inline-block">
+                  {"Founder".split("").map((char, charIdx) => (
+                    <motion.span 
+                      key={`founder-${charIdx}`} 
+                      variants={textRevealVariants}
+                      className="inline-block"
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                </span>
               </motion.h2>
 
               {/* Bio Paragraph */}
               <p className="font-body text-base md:text-lg leading-6 md:leading-7 text-muted-gray font-normal">
-                Rishi Kapoor is a founder of Adyber, working as a marketing expert and designer. He works with early-stage startups and established brands to build cohesive brand systems and high-converting marketing campaigns. Rishi blends analytic marketing logic with premium aesthetic layouts to drive organic growth.
+                Rishi Kapoor is a co-founder of Adyber, working as a marketing expert and designer. He works with early-stage startups and established brands to build cohesive brand systems and high-converting marketing campaigns. Rishi blends analytic marketing logic with premium aesthetic layouts to drive organic growth.
               </p>
 
             </div>
@@ -253,7 +285,7 @@ function FounderIntro() {
             <div className="w-full h-[1px] bg-black/12" />
 
             {/* Career Timeline */}
-            <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 w-full">
+            <div className="flex flex-col gap-2.5 sm:gap-3.5 w-full">
               {rishiTimeline.map((item, idx) => (
                 <div key={idx} className="flex justify-between items-center w-full font-body text-xs sm:text-sm leading-none">
                   <span className="font-bold text-[#131313]">{item.role}</span>

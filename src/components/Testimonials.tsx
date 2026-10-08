@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import angelWorldSchoolImage from '../assets/angel-world-school.jpg'
 import brothersDhabaImage from '../assets/brothers-dhaba.jpg'
+import hexaStudioImage from '../assets/hexa-studio.jpg'
 
 // Custom animated counter component that triggers on viewport entry
 function AnimatedNumber({ 
@@ -61,7 +62,7 @@ const slides = [
     role: "Owner, Brothers Dhaba"
   },
   {
-    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80",
+    image: hexaStudioImage,
     page: "03 / 03",
     quote: "“Smart design, smooth delivery, and clean branding. Adyber is a powerhouse partner for scaling startups.”",
     name: "Lucas Bennett",
@@ -143,7 +144,7 @@ function Testimonials() {
           
           {/* Left Stats Card */}
           <motion.div 
-            className="w-full lg:w-[361px] h-auto lg:h-[460px] min-h-[340px] rounded-[24px] bg-[#1a1a1a] relative overflow-hidden flex flex-col justify-between p-6 sm:p-8 pt-8 sm:pt-[36px]"
+            className="w-full lg:w-[361px] h-auto lg:h-[460px] min-h-[340px] rounded-[24px] bg-[#1a1a1a] border border-white/[0.08] relative overflow-hidden flex flex-col justify-between p-6 sm:p-8 pt-8 sm:pt-[36px] shadow-2xl"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -195,7 +196,7 @@ function Testimonials() {
 
           {/* Right Testimonial Card / Slideshow */}
           <motion.div 
-            className="w-full lg:w-[744px] min-h-[360px] sm:min-h-[420px] h-auto lg:h-[460px] rounded-[24px] bg-[#222222] relative overflow-hidden flex flex-col justify-between p-6 sm:p-8 md:p-10 z-10"
+            className="w-full lg:w-[744px] min-h-[360px] sm:min-h-[420px] h-auto lg:h-[460px] rounded-[24px] bg-[#222222] border border-white/[0.08] relative overflow-hidden flex flex-col justify-between p-6 sm:p-8 md:p-10 z-10 shadow-2xl"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -219,12 +220,12 @@ function Testimonials() {
                 {/* Background image with scaling in-view effect */}
                 <motion.img 
                   src={slides[currentSlide].image} 
-                  alt="Laptop Workspace" 
-                  className="absolute inset-0 w-full h-full object-cover block"
+                  alt={slides[currentSlide].name} 
+                  className="absolute inset-0 w-full h-full object-cover block filter brightness-90 contrast-105"
                   variants={imageVariants}
                 />
-                {/* Dark shading layer */}
-                <div className="absolute inset-0 bg-black/60 z-10 pointer-events-none" />
+                {/* Deep atmospheric gradient layer that enhances artwork while giving pristine text contrast */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/60 z-10 pointer-events-none" />
               </motion.div>
             </AnimatePresence>
 
@@ -288,7 +289,7 @@ function Testimonials() {
               >
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white/80 group-hover:text-white transition-colors duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 5" />
+                  <polyline points="12 5 19 12 12 19" />
                 </svg>
               </button>
 

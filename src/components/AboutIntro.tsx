@@ -1,32 +1,35 @@
 import { motion } from 'framer-motion'
-import webDevImage from '../assets/web-dev.jpg'
-import socialMediaImage from '../assets/social-media.jpg'
-import aiAutomationImage from '../assets/ai-automation.jpg'
+import serviceWebDev from '../assets/service-web-dev.png'
+import serviceLocalSeo from '../assets/service-seo.png'
+import serviceSocialMedia from '../assets/social-media.jpg'
+import serviceBranding from '../assets/service-branding.png'
+import serviceContent from '../assets/service-content.png'
+import aiAutomationImage from '../assets/service-ai-automation.png'
 
 const tags = [
   { 
     name: 'Website Development', 
-    image: webDevImage, 
+    image: serviceWebDev, 
     desc: "High-performance marketing & web apps. Fast-loading, mobile-optimized custom design for brands in Dehradun, Haridwar & globally." 
   },
   { 
     name: 'Local SEO & Marketing', 
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80", 
+    image: serviceLocalSeo, 
     desc: "Result-driven Search Engine Optimization targeting 'marketing agency near me' searches across Dehradun, Haridwar & Uttarakhand." 
   },
   { 
     name: 'Social Media Management', 
-    image: socialMediaImage, 
+    image: serviceSocialMedia, 
     desc: "Strategic growth, scheduling, and community management. We scale your brand's presence across multi-platform social channels." 
   },
   { 
     name: 'Branding & UI/UX', 
-    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80", 
+    image: serviceBranding, 
     desc: "Distinct visual identity systems that capture market share. Logos, custom color palettes, typography, and clear design guidelines." 
   },
   { 
     name: 'Content Creation', 
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80", 
+    image: serviceContent, 
     desc: "Engaging digital media, copywriting, and visual collateral custom-tailored to tell your brand story and increase conversions." 
   },
   { 

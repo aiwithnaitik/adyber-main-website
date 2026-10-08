@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { motion } from 'framer-motion'
 
 const SparkleIcon = () => (
@@ -7,9 +7,64 @@ const SparkleIcon = () => (
   </svg>
 )
 
-const emails = Array(12).fill("team@adyber.com")
+const emails = Array(12).fill("connect@adyber.com")
 
 function ContactConnect() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    service: '',
+    message: ''
+  })
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (!formData.name.trim() || !formData.email.trim()) {
+      setStatus('error')
+      setErrorMessage('Please provide both your name and email address.')
+      return
+    }
+
+    setStatus('submitting')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/connect@adyber.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          service: formData.service || 'Not specified',
+          message: formData.message || 'No description provided',
+          _subject: `New Project Inquiry from ${formData.name} - Adyber`,
+          _captcha: "false"
+        })
+      })
+
+      const data = await response.json()
+      if (response.ok && data.success !== "false") {
+        setStatus('success')
+        setFormData({ name: '', email: '', service: '', message: '' })
+      } else {
+        setStatus('error')
+        setErrorMessage(data.message || 'Submission failed. Please try again or reach out to connect@adyber.com directly.')
+      }
+    } catch {
+      setStatus('error')
+      setErrorMessage('Network error occurred. Please try again or email us directly at connect@adyber.com.')
+    }
+  }
+
   const charVariants = {
     hidden: { opacity: 0, y: 10, filter: 'blur(10px)' },
     visible: { 
@@ -135,18 +190,55 @@ function ContactConnect() {
 
           {/* Right Column: Styled Contact Form Card */}
           <form 
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
+            action="https://formsubmit.co/connect@adyber.com"
+            method="POST"
             className="w-full lg:w-[480px] bg-white/[0.02] border border-white/10 backdrop-blur-md rounded-[20px] sm:rounded-[24px] p-5 sm:p-8 md:p-10 flex flex-col gap-4 sm:gap-6 text-left shadow-2xl relative z-10"
           >
+            {/* Success Banner */}
+            {status === 'success' && (
+              <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-sm flex flex-col gap-2">
+                <div className="flex items-center gap-2 font-semibold">
+                  <svg className="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Thank you! Message received.</span>
+                </div>
+                <p className="text-xs text-emerald-200/80">
+                  We have received your project details and will respond via email to <strong className="text-white">connect@adyber.com</strong> shortly.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setStatus('idle')}
+                  className="mt-1 text-xs text-white/70 hover:text-white underline self-start cursor-pointer bg-transparent border-none p-0"
+                >
+                  Send another inquiry
+                </button>
+              </div>
+            )}
+
+            {/* Error Banner */}
+            {status === 'error' && (
+              <div className="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-center gap-2">
+                <svg className="w-4 h-4 text-rose-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>{errorMessage}</span>
+              </div>
+            )}
             
             {/* Field 1: Name */}
             <div className="flex flex-col gap-2 w-full">
               <label htmlFor="contact-name" className="font-body text-xs font-semibold uppercase tracking-wider text-white/70 leading-none">
-                Your Name
+                Your Name <span className="text-brand-orange">*</span>
               </label>
               <input 
                 type="text" 
                 id="contact-name"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Enter your Name"
                 className="w-full h-11 sm:h-12 px-4 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-brand-orange/50 focus:bg-white/[0.08] transition-all duration-200 font-body text-sm"
               />
@@ -155,17 +247,21 @@ function ContactConnect() {
             {/* Field 2: Email */}
             <div className="flex flex-col gap-2 w-full">
               <label htmlFor="contact-email" className="font-body text-xs font-semibold uppercase tracking-wider text-white/70 leading-none">
-                Your Email
+                Your Email <span className="text-brand-orange">*</span>
               </label>
               <input 
                 type="email" 
                 id="contact-email"
-                placeholder="Enter the Email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Enter your Email"
                 className="w-full h-11 sm:h-12 px-4 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-brand-orange/50 focus:bg-white/[0.08] transition-all duration-200 font-body text-sm"
               />
             </div>
 
-            {/* Field 4: Which service do you want? */}
+            {/* Field 3: Which service do you want? */}
             <div className="flex flex-col gap-2 w-full">
               <label htmlFor="contact-service" className="font-body text-xs font-semibold uppercase tracking-wider text-white/70 leading-none">
                 Which service do you want?
@@ -173,16 +269,19 @@ function ContactConnect() {
               <div className="relative w-full">
                 <select 
                   id="contact-service"
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
                   className="w-full h-11 sm:h-12 pl-4 pr-10 rounded-xl bg-white/[0.05] border border-white/10 text-white focus:outline-none focus:border-brand-orange/50 focus:bg-white/[0.08] transition-all duration-200 font-body text-sm appearance-none cursor-pointer"
                   style={{ colorScheme: 'dark' }}
-                  defaultValue=""
                 >
                   <option value="" disabled className="bg-[#181818] text-white/50">Select a Service</option>
-                  <option value="web-dev" className="bg-[#181818] text-white">Web Development</option>
-                  <option value="ui-ux" className="bg-[#181818] text-white">UI/UX Design</option>
-                  <option value="seo" className="bg-[#181818] text-white">SEO Optimization</option>
-                  <option value="branding" className="bg-[#181818] text-white">Branding & Identity</option>
-                  <option value="other" className="bg-[#181818] text-white">Other Services</option>
+                  <option value="Website Development" className="bg-[#181818] text-white">Website Development</option>
+                  <option value="Local SEO & Marketing" className="bg-[#181818] text-white">Local SEO & Marketing</option>
+                  <option value="Social Media Management" className="bg-[#181818] text-white">Social Media Management</option>
+                  <option value="Branding & UI/UX" className="bg-[#181818] text-white">Branding & UI/UX</option>
+                  <option value="Personalised AI Automations" className="bg-[#181818] text-white">Personalised AI Automations</option>
+                  <option value="Other Services" className="bg-[#181818] text-white">Other Services</option>
                 </select>
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white/40">
                   <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -192,13 +291,16 @@ function ContactConnect() {
               </div>
             </div>
 
-            {/* Field 5: Project Description */}
+            {/* Field 4: Project Description */}
             <div className="flex flex-col gap-2 w-full">
               <label htmlFor="contact-desc" className="font-body text-xs font-semibold uppercase tracking-wider text-white/70 leading-none">
                 Project Description
               </label>
               <textarea 
                 id="contact-desc"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Describe your project, timeline, and goals..."
                 rows={3}
                 className="w-full min-h-[88px] sm:min-h-[96px] p-4 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-brand-orange/50 focus:bg-white/[0.08] transition-all duration-200 font-body text-sm resize-none"
@@ -208,9 +310,22 @@ function ContactConnect() {
             {/* Submit Button */}
             <button 
               type="submit"
-              className="w-full h-11 sm:h-12 mt-2 bg-[#F4F4F4] hover:bg-brand-orange hover:text-white text-[#131313] font-body text-sm font-semibold tracking-tight transition-all duration-200 rounded-xl border-none cursor-pointer outline-none flex items-center justify-center"
+              disabled={status === 'submitting'}
+              className="w-full h-11 sm:h-12 mt-2 bg-[#F4F4F4] hover:bg-brand-orange hover:text-white text-[#131313] font-body text-sm font-semibold tracking-tight transition-all duration-200 rounded-xl border-none cursor-pointer outline-none flex items-center justify-center disabled:opacity-60 disabled:cursor-not-allowed group"
             >
-              Send Now!
+              {status === 'submitting' ? (
+                <span className="flex items-center gap-2">
+                  <svg className="animate-spin h-4 w-4 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                  </svg>
+                  Sending...
+                </span>
+              ) : status === 'success' ? (
+                'Sent Successfully ✓'
+              ) : (
+                'Send Now!'
+              )}
             </button>
 
           </form>
@@ -274,9 +389,7 @@ function ContactConnect() {
               <h4 className="font-body text-xs font-semibold uppercase tracking-wider text-white/80">Connect</h4>
               <div className="flex flex-col gap-1.5 sm:gap-2">
                 <span className="font-body text-xs sm:text-sm text-white/50">Email:</span>
-                <a href="mailto:team@adyber.com" className="font-body text-xs sm:text-sm text-white hover:text-brand-orange transition-colors duration-200 no-underline self-start font-medium">team@adyber.com</a>
-                <span className="font-body text-xs sm:text-sm text-white/50 mt-2">Support:</span>
-                <a href="mailto:naitik@adyber.com" className="font-body text-xs sm:text-sm text-white hover:text-brand-orange transition-colors duration-200 no-underline self-start font-medium">naitik@adyber.com</a>
+                <a href="mailto:connect@adyber.com" className="font-body text-xs sm:text-sm text-white hover:text-brand-orange transition-colors duration-200 no-underline self-start font-medium">connect@adyber.com</a>
               </div>
             </div>
             
