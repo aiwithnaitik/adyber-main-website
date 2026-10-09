@@ -87,7 +87,7 @@ function Hero() {
           transition={{ duration: 0.4, delay: 1.4, ease: [0.25, 1, 0.5, 1] }}
         >
           <div className="flex items-center relative flex-shrink-0">
-            <img src="https://framerusercontent.com/images/LdiJIgo7vhBde0WiWHd48uSzxU.png" alt="Adyber Co-Founder Naitik Grover - Lead Developer Dehradun" className="w-8 h-8 rounded-full border-2 border-white shadow-[0px_1px_2px_rgba(0,0,0,0.08),_0px_2px_6px_rgba(0,0,0,0.04)] object-cover z-[3]" />
+            <img src="https://framerusercontent.com/images/LdiJIgo7vhBde0WiWHd48uSzxU.png" alt="Adyber Founder Naitik Grover - Lead Developer Dehradun" className="w-8 h-8 rounded-full border-2 border-white shadow-[0px_1px_2px_rgba(0,0,0,0.08),_0px_2px_6px_rgba(0,0,0,0.04)] object-cover z-[3]" />
             <img src="https://framerusercontent.com/images/I9yoNS4RgoWEeRpJDtgEIoLAd4Y.png" alt="Adyber Co-Founder Rishi Kapoor - Marketing Expert Haridwar" className="w-8 h-8 rounded-full border-2 border-white shadow-[0px_1px_2px_rgba(0,0,0,0.08),_0px_2px_6px_rgba(0,0,0,0.04)] object-cover z-[2] -ml-2.5" />
             <img src="https://framerusercontent.com/images/G5E86VA7DStEga3pPtCu3nwW1qE.png" alt="Adyber Client - Digital Marketing & Growth" className="w-8 h-8 rounded-full border-2 border-white shadow-[0px_1px_2px_rgba(0,0,0,0.08),_0px_2px_6px_rgba(0,0,0,0.04)] object-cover z-[1] -ml-2.5" />
           </div>
